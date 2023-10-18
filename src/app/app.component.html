@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rick and Morty Characters</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    .character-card {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rick and Morty Characters</h1>
+
+  <div *ngFor="let character of characters" class="character-card">
+    <img [src]="character.image" alt="{{ character.name }}" style="max-width: 100px;">
+    <h2>{{ character.name }}</h2>
+    <p>Status: {{ character.status }}</p>
+    <p>Species: {{ character.species }}</p>
+    <p>Type: {{ character.type || 'N/A' }}</p>
+    <p>Gender: {{ character.gender }}</p>
+    <p>Origin: {{ character.origin.name }}</p>
+    <p>Location: {{ character.location.name }}</p>
+    <a href="{{ character.url }}" target="_blank">More Info</a>
+  </div>
+</body>
+</html>
